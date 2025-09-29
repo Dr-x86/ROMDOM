@@ -27,18 +27,18 @@ for enlace in enlaces_repo:
 subLista = random.choice(lista)
 juego = random.choice(subLista)
 
-extension = juego.split(".")
-extension = extension[len(extension)-1]
 
-print(extension)
+nombre = juego.split("/")
+nombre = nombre[len(nombre)-1]
+
+print(f"Juego: {nombre}")
 
 descarga = requests.get(juego)
 
 
 
-with open(f"Juego.{extension}", "wb") as f:
+with open(nombre, "wb") as f:
     f.write(descarga.content)
-
 
 print("Descargado")
 
@@ -56,7 +56,7 @@ def enviarJuego():
         "caption":"Juego aleatorio del dia"
     }
     files = {
-        "document": open(f"Juego.{extension}","rb")
+        "document": open(nombre,"rb")
     }
         
     try:
