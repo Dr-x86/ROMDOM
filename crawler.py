@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 from urllib.parse import urljoin
 from urllib.parse import unquote
-from tkinter import messagebox
 
 def busquedaRecursiva(lista_urls):
     lista_enlaces = [] 
